@@ -1,0 +1,45 @@
+ul {
+	list-style-type: none;
+	margin: auto;
+	padding: 0;
+	width:100%;
+	overflow: hidden;
+	background-color: rgb(191, 189, 189, 0.5);
+	
+}
+
+.predictedTexts{
+	float: left;
+	display: block;
+	text-align: center;
+	width:29.1%;
+	padding: 16px;
+	margin-right: auto;
+	margin-left: left;
+	text-decoration: none;
+	font-family: "Verdana";
+}
+
+.predictedTexts:hover{
+	background-color: rgb(191, 189, 189);
+}
+
+#middle{
+	font-weight: bold;
+}
+
+.center{
+	display: block;
+	margin: auto;
+	margin-top: 10%;
+	width: 50%;
+}
+
+#inputBox{
+	width:97%;
+	margin:0;
+	float:center;
+	border-radius: 4px;
+	padding: 10px;
+	font-size: 15pt;
+}
