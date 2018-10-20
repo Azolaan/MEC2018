@@ -1,0 +1,21 @@
+<!doctype html>
+<title>Hello from Flask</title>
+<head>
+    <!--<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="scripts.js"></script>
+</head>
+
+<body>
+	<div class="center">
+		{% if predictedtext %}
+		 <ul>
+			<li class="predictedTexts" id="left">{{predictedtext[1]}}</li>
+			<li class="predictedTexts" id="middle">{{predictedtext[0]}}</li>
+			<li class="predictedTexts" id="right">{{predictedtext[2]}}</li>
+		</ul>
+		{% endif %}
+		<input type="text" id="inputBox">
+	</div>
+</body>
