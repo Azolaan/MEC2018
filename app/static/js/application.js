@@ -4,11 +4,22 @@ $(document).ready(function(){
     var textrecieved = [];
     socket.on('newtext', function(msg){
         textrecieved.push(msg.text);
-        
+    
         text_string = '';
         for(var i = 0; i < textrecieved.length; i++) {
             text_string = text_string + '<p>' + textrecieved[i] + '</p>';
         }
         $('#log').html(text_string);
     });
+
+    socket.on('message', function(msg){
+        $("#messages").append('<li>' + msg + '</li>');
+    })
+
+    $("#send").on("click", function() {
+        socket.send($('#msg').val());
+        $("#msg").val('');
+    })
 });
+
+

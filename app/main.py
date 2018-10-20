@@ -15,14 +15,14 @@ thread_stop_event = Event()
 
 class GiveThread(Thread):
     def __init__(self):
-        self.delay = 1
         super(GiveThread, self).__init__()
+
 
     def giveText(self):
         while not thread_stop_event.isSet():
             text = "hello"  
             socketio.emit('newtext', {'text': text}, namespace="/test")
-            sleep(self.delay)
+            sleep(2)
     
     def run(self):
         self.giveText()
@@ -45,5 +45,11 @@ def test_connect():
 def test_disconnect():
     print ('Client disconnected')
 
+@socketio.on('message')
+def handleMessage(msg):
+    print('Message:  ' + msg)
+    send(msg, broadcast=True)
+
+    
 if __name__ == '__main__':
     socketio.run(app)
